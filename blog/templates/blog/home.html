@@ -1,0 +1,95 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <!--    Section of Main    -->
+    <section class="main-page">
+        <div class="row">
+            <div class="col-11 main-image-title">
+                <img class="img-fluid" src="../../static/blog/images/MainPagePicture.png" alt="">    
+                <div class="centered">EVREN KAŞİFİ</div>
+            </div>
+            <div class="col-1 social-media-tabs">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href=""><svg class="facebook-logo button" height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg"><path d="m297.277344 508.667969c-2.132813.347656-4.273438.667969-6.421875.960937 2.148437-.292968 4.289062-.613281 6.421875-.960937zm0 0"/><path d="m302.398438 507.792969c-1.019532.1875-2.039063.359375-3.058594.535156 1.019531-.175781 2.039062-.347656 3.058594-.535156zm0 0"/><path d="m285.136719 510.339844c-2.496094.28125-5.007813.53125-7.527344.742187 2.519531-.210937 5.03125-.460937 7.527344-.742187zm0 0"/><path d="m290.054688 509.738281c-1.199219.160157-2.40625.308594-3.609376.449219 1.203126-.140625 2.410157-.289062 3.609376-.449219zm0 0"/><path d="m309.367188 506.410156c-.898438.191406-1.800782.382813-2.703126.566406.902344-.183593 1.804688-.375 2.703126-.566406zm0 0"/><path d="m326.664062 502.113281c-.726562.207031-1.453124.402344-2.179687.605469.726563-.203125 1.453125-.398438 2.179687-.605469zm0 0"/><path d="m321.433594 503.542969c-.789063.207031-1.582032.417969-2.375.617187.792968-.199218 1.585937-.40625 2.375-.617187zm0 0"/><path d="m314.589844 505.253906c-.835938.195313-1.679688.378906-2.523438.566406.84375-.1875 1.6875-.371093 2.523438-.566406zm0 0"/><path d="m277.527344 511.089844c-1.347656.113281-2.695313.214844-4.046875.304687 1.351562-.089843 2.699219-.191406 4.046875-.304687zm0 0"/><path d="m512 256c0-141.363281-114.636719-256-256-256s-256 114.636719-256 256 114.636719 256 256 256c1.503906 0 3-.03125 4.5-.058594v-199.285156h-55v-64.097656h55v-47.167969c0-54.703125 33.394531-84.476563 82.191406-84.476563 23.367188 0 43.453125 1.742188 49.308594 2.519532v57.171875h-33.648438c-26.546874 0-31.6875 12.617187-31.6875 31.128906v40.824219h63.476563l-8.273437 64.097656h-55.203126v189.453125c107.003907-30.675781 185.335938-129.257813 185.335938-246.109375zm0 0"/><path d="m272.914062 511.429688c-2.664062.171874-5.339843.308593-8.023437.398437 2.683594-.089844 5.359375-.226563 8.023437-.398437zm0 0"/><path d="m264.753906 511.835938c-1.414062.046874-2.832031.082031-4.25.105468 1.417969-.023437 2.835938-.058594 4.25-.105468zm0 0"/></svg></a></li>
+                    <li class="list-group-item"><a href=""><svg class="twitter-logo button" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="49.652px" height="49.652px" viewBox="0 0 49.652 49.652" style="enable-background:new 0 0 49.652 49.652;" xml:space="preserve"><g><g> <path d="M24.826,0C11.137,0,0,11.137,0,24.826c0,13.688,11.137,24.826,24.826,24.826c13.688,0,24.826-11.138,24.826-24.826C49.652,11.137,38.516,0,24.826,0z M35.901,19.144c0.011,0.246,0.017,0.494,0.017,0.742c0,7.551-5.746,16.255-16.259,16.255c-3.227,0-6.231-0.943-8.759-2.565c0.447,0.053,0.902,0.08,1.363,0.08c2.678,0,5.141-0.914,7.097-2.446c-2.5-0.046-4.611-1.698-5.338-3.969c0.348,0.066,0.707,0.103,1.074,0.103c0.521,0,1.027-0.068,1.506-0.199c-2.614-0.524-4.583-2.833-4.583-5.603c0-0.024,0-0.049,0.001-0.072c0.77,0.427,1.651,0.685,2.587,0.714c-1.532-1.023-2.541-2.773-2.541-4.755c0-1.048,0.281-2.03,0.773-2.874c2.817,3.458,7.029,5.732,11.777,5.972c-0.098-0.419-0.147-0.854-0.147-1.303c0-3.155,2.558-5.714,5.713-5.714c1.644,0,3.127,0.694,4.171,1.804c1.303-0.256,2.523-0.73,3.63-1.387c-0.43,1.335-1.333,2.454-2.516,3.162c1.157-0.138,2.261-0.444,3.282-0.899C37.987,17.334,37.018,18.341,35.901,19.144z"/></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></a></li>
+                    <li class="list-group-item"><a href=""><svg class="instagram-logo button" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="49.652px" height="49.652px" viewBox="0 0 49.652 49.652" style="enable-background:new 0 0 49.652 49.652;"xml:space="preserve"><g><g><g><path d="M24.825,29.796c2.739,0,4.972-2.229,4.972-4.97c0-1.082-0.354-2.081-0.94-2.897c-0.903-1.252-2.371-2.073-4.029-2.073c-1.659,0-3.126,0.82-4.031,2.072c-0.588,0.816-0.939,1.815-0.94,2.897C19.854,27.566,22.085,29.796,24.825,29.796z"/><polygon points="35.678,18.746 35.678,14.58 35.678,13.96 35.055,13.962 30.891,13.975 30.907,18.762 			"/><path d="M24.826,0C11.137,0,0,11.137,0,24.826c0,13.688,11.137,24.826,24.826,24.826c13.688,0,24.826-11.138,24.826-24.826 C49.652,11.137,38.516,0,24.826,0z M38.945,21.929v11.56c0,3.011-2.448,5.458-5.457,5.458H16.164c-3.01,0-5.457-2.447-5.457-5.458v-11.56v-5.764c0-3.01,2.447-5.457,5.457-5.457h17.323c3.01,0,5.458,2.447,5.458,5.457V21.929z"/><path d="M32.549,24.826c0,4.257-3.464,7.723-7.723,7.723c-4.259,0-7.722-3.466-7.722-7.723c0-1.024,0.204-2.003,0.568-2.897h-4.215v11.56c0,1.494,1.213,2.704,2.706,2.704h17.323c1.491,0,2.706-1.21,2.706-2.704v-11.56h-4.217C32.342,22.823,32.549,23.802,32.549,24.826z"/></g></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="article">
+        <!--    Section of Article for Tablets   -->
+        <div>
+            {% for post in posts %}   
+            <div class="card article-tablet">
+                <img src="../../static/blog/images/paris.jpg" class="card-img-top" alt="">
+                <div class="card card-tablet">
+                    <div class="card-body">
+                        <h5 class="card-title card-title-tablet">{{ post.title }}</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fringilla purus non leo lobortis cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In at urna in ipsum tristique sagittis vitae et risus. Aenean placerat luctus eros id efficitur. Ut hendrerit massa vitae felis faucibus pharetra. Vivamus dignissim dictum nisi et hendrerit. Proin sit amet magna sed ligula sodales aliquam. Proin nunc massa, mattis a lacus in, vehicula euismod diam. Sed libero enim, sodales sit amet magna ut.</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!--    Section of Article for Desktop   -->
+        <div class="container container-desktop">
+            {% for post in posts %}
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="../../static/blog/images/paris.jpg" class="article-img shadow-lg" alt="Eiffel Tower">
+                </div>
+                <div class="col-sm-6">
+                    <div class="card card-desktop">
+                        <div class="card-body">
+                            <h5 class="card-title card-title-desktop">{{ post.title }}</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fringilla purus non leo lobortis cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In at urna in ipsum tristique sagittis vitae et risus. Aenean placerat luctus eros id efficitur. Ut hendrerit massa vitae felis faucibus pharetra. Vivamus dignissim dictum nisi et hendrerit. Proin sit amet magna sed ligula sodales aliquam. Proin nunc massa, mattis a lacus in, vehicula euismod diam. Sed libero enim, sodales sit amet magna ut.</p>
+                            <a href="{% url 'post-detail' post.id %}"><button class="btn btn-info">Devamını Oku</button></a>
+                        </div>
+                        <div class="card-footer card-footer-desktop">
+                            <div class="media">
+                                <img src="{{ post.author.profile.image.url }}" class="mr-3 author-img" alt="">
+                                <div class="media-body">
+                                    <a href="{% url 'user-posts' post.author.username %}" style="color: #F57B39;"><h5 class="mt-0">{{ post.author }}</h5></a>
+                                    <p class="text-muted">{{ post.date_posted }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            {% endfor %}
+            {% if is_paginated %}
+            <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" aria-label="Previous" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+                </li>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <li class="page-item">
+                        <a class="page-link current-page" href="?page={{ num }}">{{ num }}</a>
+                    </li>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                    </li>    
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" aria-label="Next" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+                </li>
+            {% endif %}
+            </ul>
+        {% endif %}    
+        </div>
+    </section>
+    
+{% endblock content %}

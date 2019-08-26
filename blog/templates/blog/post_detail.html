@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-8 mt-3">
+            <h1 class="article-detail-title">{{ object.title }}</h1>
+            <p class="article-detail-content">{{ object.content }}</p>
+        </div>
+        <div class="col-4 mt-3">
+            <div class="card article-detail-card" style="width: 18rem;">
+                <img src="{{ object.author.profile.image.url }}" class="card-img-top article-detail-author-img" alt="{{ object.author }}">
+                <div class="card-body">
+                    <a class="article-detail-author-name" href="{% url 'user-posts' object.author.username %}"><h5 class="card-title">{{ object.author }}</h5></a>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--     <div class="row container">
+        <div class="col-sm-6">
+            <img src="../../static/blog/images/paris.jpg" class="article-img shadow-lg" alt="Eiffel Tower">
+        </div>
+        <div class="col-sm-6">
+            <div class="card card-desktop">
+                <div class="card-body">
+                    <h5 class="card-title card-title-desktop">{{ object.title }}</h5>
+                    <p class="card-text">{{ object.content }}</p>
+                </div>
+                <div class="card-footer card-footer-desktop">
+                    <div class="media">
+                        <img src="{{ object.author.profile.image.url }}" class="mr-3 author-img" alt="">
+                        <div class="media-body">
+                            <a href="{% url 'user-posts' object.author.username %}"><h5 class="mt-0">{{ object.author }}</h5></a>
+                            <p class="text-muted">{{ object.date_posted }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+{% endblock content %}
+    
