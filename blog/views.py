@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.views.generic import (
     ListView, 
     DetailView, 
@@ -16,12 +17,72 @@ def home(request):
     }
     return render(request, 'blog/home.html', context)
 
+class TravelPostListView(ListView):
+    model = Post
+    template_name = 'blog/travel.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 5
+
+    def get_queryset(self):
+        return super().get_queryset().filter(categories='TR')
+
+class MoviePostListView(ListView):
+    model = Post
+    template_name = 'blog/movie.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 6
+
+    def get_queryset(self):
+        return super().get_queryset().filter(categories='MT')
+
+class BookPostListView(ListView):
+    model = Post
+    template_name = 'blog/book.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 3
+
+    def get_queryset(self):
+        return super().get_queryset().filter(categories='BK')
+
+class GamePostListView(ListView):
+    model = Post
+    template_name = 'blog/game.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 3
+
+    def get_queryset(self):
+        return super().get_queryset().filter(categories='GM')
+
+class CodePostListView(ListView):
+    model = Post
+    template_name = 'blog/coding.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 3
+
+    def get_queryset(self):
+        return super().get_queryset().filter(categories='CD')
+
+class AviationPostListView(ListView):
+    model = Post
+    template_name = 'blog/aviation.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 3
+
+    def get_queryset(self):
+        return super().get_queryset().filter(categories='AV')
+
 class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html' # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']
-    paginate_by = 3
+    paginate_by = 5
 
 class UserPostListView(ListView):
     model = Post
@@ -38,7 +99,7 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'categories', 'cover_pic', 'content']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -46,7 +107,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdatedView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'categories', 'content']
 
     def form_valid(self, form):
         form.instance.author = self.request.user

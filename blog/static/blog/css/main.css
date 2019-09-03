@@ -1,5 +1,9 @@
 body {
-  background: #F5F2F0;
+  background: #1C1D24;
+}
+
+.card-columns {
+  column-count: 2 !important;
 }
 
 /* Navbar */
@@ -9,13 +13,12 @@ body {
 
 .nav-link {
   font-family: Baloo Bhai;
-  color: #46322B !important;
+  color: #F5EEE6 !important;
   font-size: 1.56em;
-  font-weight: bold;
 }
 
 .nav-link:hover {
-  color: #F57B39 !important;
+  color: #EA2340 !important;
 }
 
 /* Main Page */
@@ -27,7 +30,7 @@ body {
   font-family: Kodchasan;
   font-weight: bold;
   font-size: 6.2vw;
-  color: #46322B;
+  color: #F5EEE6;
 }
 
 .main-image-title {
@@ -60,7 +63,7 @@ body {
 .button {
   width: 49.65px;
   height: 49.65px;
-  fill: #46322B;
+  fill: #F5EEE6;
 }
 
 .list-group-item {
@@ -70,7 +73,7 @@ body {
 }
 
 .button:hover {
-  fill: #F57B39;
+  fill: #EA2340;
 }
 
 /* Articles */
@@ -84,15 +87,35 @@ body {
   height: 660px;
   border-style: none;
   background-color: transparent;
+  color: #FFFFFF;
+}
+
+.article-desktop {
+  width: 100%;
+  height: 100vh;
 }
 
 .card-title-desktop {
   text-align: center;
+  letter-spacing: 3px;
+  font-size: xx-large;
 }
 
 .card-footer-desktop {
   background-color: transparent;
   border-style: none;
+}
+
+.card-footer-btn {
+  background-color: #EA2340;
+  border-color: #EA2340;
+  color: #FFFFFF;
+}
+
+.card-footer-btn:hover {
+  background-color: rgb(168, 18, 40);
+  border-color: rgb(168, 18, 40);
+  color: #FFFFFF;
 }
 
 .author-img {
@@ -104,6 +127,17 @@ body {
 .article-published-date {
   position: relative;
   left: 100%;
+}
+
+.article-author-name {
+  color: #EA2340;
+  font-size: 30px;
+  font-family: Pacifico;
+}
+
+.article-author-name:hover {
+  color: rgb(168, 18, 40);
+  text-decoration: none;
 }
 
 /* User Profile */
@@ -121,6 +155,11 @@ body {
 /* Article Detail */
 .article-detail-title {
   text-align: center;
+  color: #F5EEE6;
+}
+
+.article-detail p {
+  color: #F5EEE6;
 }
 
 .article-detail-author-img {
@@ -129,8 +168,9 @@ body {
 }
 
 .article-detail-card {
-  background-color: #F57B39;
-  color: #F5F2F0;
+  border-style: none;
+  background-color: #EA2340;
+  color: #F5EEE6;
   margin-left: 25px;
   display: block;
   position: fixed;
@@ -149,18 +189,18 @@ body {
 .page-link {
   background-color: transparent;
   border-style: none;
-  color: #F57B39;
+  color: #EA2340;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .current-page {
-  color: #46322B;
+  color: #F5EEE6;
 }
 
 .page-link:hover{
   background-color: transparent;
-  color: #46322B;
+  color: #F5EEE6;
   font-size: 2rem;
 }
 
@@ -168,6 +208,71 @@ body {
 .login-form {
   width: 18rem;
 }
+
+/* New Post */
+.post-button, .register-button {
+  color: #EA2340;
+  border-color: #EA2340;
+  display: flex;
+  margin: auto;
+}
+
+.post-button:hover, .register-button:hover {
+  color: #1C1D24;
+  background-color: #EA2340;
+  border-color: #EA2340;
+}
+
+.new-post{
+  text-align: center;
+  color: #F5EEE6;
+}
+
+.post-form-wrap {
+  width: 85vh;
+  display: flex;
+  margin: auto;
+}
+
+.col-form-label {
+  color: #F5EEE6;
+}
+
+/* Profile */
+.profile-card {
+  border-style: none;
+  width: 18rem;
+}
+
+.profile-button {
+  background-color: #EA2340;
+  color: #F5EEE6;
+  border-color: #EA2340;
+}
+
+.profile-button:hover {
+  background-color: rgb(168, 18, 40);
+  color: #F5EEE6;
+  border-color: rgb(168, 18, 40);
+}
+
+.profile-title {
+  text-align: center;
+}
+
+.profile-article-img {
+  height: 100%;
+}
+
+.profile-article-img-cover {
+  background-color: transparent;
+}
+
+.profile-article {
+  max-width: 1240px;
+  border-style: none;
+}
+
 
 /* Desktop */
 @media only screen and (min-width: 1025px) {
@@ -186,9 +291,16 @@ body {
   .article-tablet {
     display: none;
   }
-  .article {
-    margin-top: 16vh;
-    margin-bottom: 15vh;
+
+  /* Register Form */
+  .register-form {
+    width: 50vh;
+    display: flex;
+    margin: auto;
+  }
+
+  .register-form-wrap {
+    margin-top: 10%;
   }
 }
 
@@ -272,7 +384,7 @@ body {
   .nav-link {
     text-align: center;
   }
-  .img-fluid, .centered, .social-media-tabs, .container-desktop {
+  .img-fluid, .centered, .social-media-tabs, .container-desktop, .main-page {
     display: none;
   }
   .article-tablet {

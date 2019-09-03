@@ -1,6 +1,5 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-    <h1 class="mb-3">Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
     <section class="article">
         <!--    Section of Article for Tablets   -->
         <div>
@@ -19,77 +18,49 @@
 
         <!--    Section of Article for Desktop   -->
         <div class="container container-desktop">
-            {% for post in posts %}
             <div class="row">
-                <div class="col-sm-6">
-                    <img src="../../static/blog/images/paris.jpg" class="article-img shadow-lg" alt="Eiffel Tower">
-                </div>
-                <div class="col-sm-6">
-                    <div class="card card-desktop">
-                        <div class="card-body">
-                            <h5 class="card-title card-title-desktop">{{ post.title }}</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fringilla purus non leo lobortis cursus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In at urna in ipsum tristique sagittis vitae et risus. Aenean placerat luctus eros id efficitur. Ut hendrerit massa vitae felis faucibus pharetra. Vivamus dignissim dictum nisi et hendrerit. Proin sit amet magna sed ligula sodales aliquam. Proin nunc massa, mattis a lacus in, vehicula euismod diam. Sed libero enim, sodales sit amet magna ut.</p>
-                            <a href="{% url 'post-detail' post.id %}"><button class="btn btn-info">Devamını Oku</button></a>
+                <!--    Sidebar    -->
+                <div class="col-md-4">
+                    <div class="card profile-card">
+                        <img src="{{ user.profile.image.url }}" class="card-img-top" alt="{{ user.first_name }} {{ user.last_name }}">
+                        <div class="card-body" style="background-color: #f5eee6; color: #1C1D24;">
+                            <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+                            <p class="card-text">{{ user.email }}</p>
+                            <p class="card-text">{{ page_obj.paginator.count }} Makale</p>
                         </div>
-                        <div class="card-footer card-footer-desktop">
-                            <div class="media">
-                                <img src="{{ post.author.profile.image.url }}" class="mr-3 author-img" alt="">
-                                <div class="media-body">
-                                    <a href="{% url 'user-posts' post.author.username %}"><h5 class="mt-0">{{ post.author }}</h5></a>
-                                    <p class="text-muted">{{ post.date_posted }}</p>
+                    </div>
+                </div>
+            
+                
+                <div class="col-md-8">
+                {% for post in posts %}
+                    <div class="card border-danger mb-3 profile-article">
+                        <div class="row no-gutters">
+                            <div class="col-md-4 profile-article-img-cover">
+                                <img src="{{ post.cover_pic.url }}" class="card-img profile-article-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body" style="background-color: #f5eee6; color: #1C1D24;">
+                                    <h5 class="card-title profile-title">{{ post.title }}</h5>
+                                    <p class="card-text">{{ post.content|safe|truncatewords:70 }}</p>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <p class="card-text"><small class="text-muted">{{ post.date_posted }}</small></p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="{% url 'post-detail' post.id %}"><button class="btn btn-warning profile-button">Devamını Oku</button></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <br>
+                    <br>
+                {% endfor %}
                 </div>
             </div>
-            <br>
-            <br>
-            <br>
-            {% endfor %}
-<!--             {% if is_paginated  %}
-                {% if page_obj.has_previous %}
-                    <a class="btn btn-outline-info mb-4" href="?page_1">First</a>
-                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                {% endif %}
-                {% for num in page_obj.paginator.page_range %}
-                    {% if page_obj.number == num %}
-                        <a class="btn bnt-info mb-4" href="?page={{ num }}">{{ num }}</a>
-                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}    
-                        <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
-                    {% endif %}
-                {% endfor %}
-                {% if page_obj.has_next %}
-                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-                {% endif %}
-            {% endif %} -->
-
-            {% if is_paginated %}
-                <ul class="pagination justify-content-center">
-                {% if page_obj.has_previous %}
-                    <li class="page-item">
-                        <a class="page-link" aria-label="Previous" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
-                    </li>
-                {% endif %}
-                {% for num in page_obj.paginator.page_range %}
-                    {% if page_obj.number == num %}
-                        <li class="page-item">
-                            <a class="page-link current-page" href="?page={{ num }}">{{ num }}</a>
-                        </li>
-                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                        <li class="page-item">
-                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
-                        </li>    
-                    {% endif %}
-                {% endfor %}
-                {% if page_obj.has_next %}
-                    <li class="page-item">
-                        <a class="page-link" aria-label="Next" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
-                    </li>
-                {% endif %}
-                </ul>
-            {% endif %}        
+     
         </div>
     </section>
     
