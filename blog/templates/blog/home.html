@@ -23,14 +23,16 @@
         <div>
             {% for post in posts %}   
             <div class="card article-tablet">
-                <img src="{{ post.cover_pic.url }}" class="card-img-top" alt="">
+                <a href="{% url 'post-detail' post.id %}"><img src="{{ post.cover_pic.url }}" class="card-img-top" alt=""></a>
                 <div class="card card-tablet">
                     <div class="card-body">
-                        <h5 class="card-title card-title-tablet">{{ post.title }}</h5>
-                        <p class="card-text">{{ post.content|safe|truncatewords:70 }}</p>
+                        <h5 class="card-title card-title-tablet"><a class="mobile-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h5>
+                        <p class="card-text">{{ post.content|safe|truncatewords:50 }}</p>
                     </div>
                 </div>
             </div>
+            <br>
+            <br>
             {% endfor %}
         </div>
 
