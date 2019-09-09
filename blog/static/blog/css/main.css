@@ -273,6 +273,27 @@ body {
   border-style: none;
 }
 
+/* Travel */
+.movie-card {
+  max-width: 1020px;
+  margin: 0 auto;
+  float: none;
+  background-color: transparent;
+  border-style: none;
+}
+
+.movie-card-img {
+  height: 400px;
+}
+
+.movie-card-content {
+  color: #F5EEE6;
+}
+
+.movie-card-footer {
+  background-color: transparent;
+  border-style: none;
+}
 
 /* Desktop */
 @media only screen and (min-width: 1025px) {
@@ -401,5 +422,14 @@ body {
   }
   .article {
     margin-top: 16vh;
+  }
+  .card-img-top {
+    height: 400px;
+  }
+  .mobile-title {
+    color: #1C1D24;
+  }
+  .card-tablet {
+    background-color: #F5EEE6;
   }
 }

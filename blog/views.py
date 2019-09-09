@@ -32,7 +32,7 @@ class MoviePostListView(ListView):
     template_name = 'blog/movie.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
-    paginate_by = 6
+    paginate_by = 4
 
     def get_queryset(self):
         return super().get_queryset().filter(categories='MT')
